@@ -1,0 +1,47 @@
+img{
+
+    width: 100px;
+   padding-left: 10px;
+   padding-top: 10px;
+}
+
+h1{
+
+    border: 2px solid lightblue;
+    
+}
+
+div h1{
+
+
+    font-style: italic;
+    color: blue;
+    
+}
+.myclass a{
+    color: rgb(14, 50, 81);
+}
+
+.myclass h1{
+    
+    background-color: aquamarine;
+    
+}
+
+img{
+
+    
+    border: 2px solid black;
+}
+
+div{
+
+    position:sticky;
+    margin-top: 0px;
+}
+
+
+    
+
+
+
