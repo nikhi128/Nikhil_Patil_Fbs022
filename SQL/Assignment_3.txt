@@ -1,0 +1,58 @@
+1. Write a SQL statement to insert a record as follows: 
+Employees : 
+->  
+mysql> INSERT INTO employee (emp_id, first_name, last_name, email, phone_num, birth_date, job_id, salary, commision, manager_id, dept_id)
+    -> VALUES
+    -> (100,'Steven', 'King', 'SKING', '515.123.4567', '1987-06-17', 'AD_PRES', 24000.00, 0.00, 200, 10),
+    -> (101,'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', '1987-06-18', 'AD_VP', 17000.00, 0.00, 200, 10),
+    -> (102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', '1987-06-19', 'AD_VP', 17000.00, 0.00, 200, 10),
+    -> (103, 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', '1987-06-20', 'IT_PROG', 9000.00, 0.00, 103, 60),
+    -> (104, 'Bruce', 'Ernst', 'BERNST', '590.423.4568', '1987-06-21', 'IT_PROG', 6000.00, 0.00, 103, 60),
+    -> (105, 'David', 'Austin', 'DAUSTIN', '590.423.4569', '1987-06-22', 'IT_PROG', 4800.00, 0.00, 103, 60),
+    -> (106, 'Valli', 'Pataballa', 'VPATABAL', '590.423.4560', '1987-06-23', 'IT_PROG', 4800.00, 0.00, 103, 60),
+    -> (107, 'Diana', 'Lorentz', 'DLORENTZ', '590.423.5567', '1987-06-24', 'IT_PROG', 4200.00, 0.00, 114, 30),
+    -> (108, 'Nancy', 'Greenberg', 'NGREENBE', '515.124.4569', '1987-06-25', 'SA_MAN', 12000.00, 0.00, 145, 80),
+    -> (109, 'Daniel', 'Faviet', 'DFAVIET', '515.124.4169', '1987-06-26', 'SA_MAN', 9000.00, 0.00, 145, 80);
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+2. Write a SQL statement to insert 3 rows by a single insert statement. 
+->
+
+ insert into employee values(110,'jayesh','patil','jay',545644454,"2004-03-12","IT",2500,0.00,200,10),
+     (111,'parathmesh','patil','parth',323234454,"2008-03-12","IT",5500,0.00,103,60),
+     (112,'Nikhil','patil','nikhil',787447898,"2008-12-03","IT_Prog",45000,0.00,103,60);
+
+
+4. Write SQL statement to increment salary of each emp by 10%.
+->mysql> update employee
+    -> set salary=salary*0.10+salary;
+Query OK, 10 rows affected (0.01 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+
+5. Write a SQL statement to change the email column of employees table with 'not 
+available' for those employees whose department_id is 80 and gets a 
+commission is less than .20%
+    ->  mysql> update employee
+    -> set email="not available"
+    -> where  commision<0.20;
+Query OK, 10 rows affected (0.00 sec)
+
+6. Write a SQL statement to change the email column of employees table with 'not 
+available' for those employees who belongs to the 'Purchasing' department.
+
+->
+   mysql> update employee
+    -> set email="not available"
+    -> where dept_id=(select dept_id from department where dept_name="Purchasing");
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+
+7. Write a SQL statement to change the email and commission_pct column of 
+employees table with 'not available' and 0.10 for all employees.
+->   mysql> update employee
+    ->      set  email="not avlable", commision=0.10;
+Query OK, 10 rows affected (0.01 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
