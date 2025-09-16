@@ -7,7 +7,7 @@ void main()
 		scanf("%d",&arr[i]);
 	}
 	int sum=0;
-	int* x=&arr;
+	
 
 	for(int x=0;x<=4;x=x+2)
 	{   
@@ -16,5 +16,6 @@ void main()
 	}
 	
 printf("%d",sum);
+
 
 }
